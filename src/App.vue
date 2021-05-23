@@ -5,19 +5,28 @@
 
     <main-comp />
 
+    <marketing-comp />
+
+    <footer-comp />
+
   </div>
 </template>
 
 <script>
+import FooterComp from './components/FooterComp.vue'
 import HeaderComp from './components/HeaderComp.vue'
 import MainComp from './components/MainComp.vue'
+import MarketingComp from './components/MarketingComp.vue'
 
 
 export default {
   name: 'App',
   components: {
     HeaderComp,
-    MainComp
+    MainComp,
+    MarketingComp,
+    FooterComp
+
     
   }
 }
@@ -25,23 +34,8 @@ export default {
 
 <style lang="scss">
 
-  *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
+@import './assets/style/App/general.scss';
+@import './assets/style/App/utilities.scss';
 
-  body{
-    min-width: 1500px;
-  }
-
-  ul{
-    list-style: none;
-  }
-
-  .container{
-    width: 75%;
-    margin: auto;
-  }
-
+ 
 </style>

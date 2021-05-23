@@ -1,49 +1,36 @@
 <template>
 
   <main>
-   
     <div class="fumetti">
       <div class="container">
-
+        <figure-main 
+          v-for="(fumetti, index) in figure" 
+          :key="index"
+          :figures="fumetti"
+        />
+        <button>LOAD MORE</button>
       </div>
     </div>
-
-    <div class="informazioni">
-      <div class="container">
-        <ul>
-          <li
-            v-for="(info, index) in infos" :key="index"
-          >
-            <img :src="'info.img'" alt="">
-            <a href="">{{ info.text }}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    
   </main>
   
 </template>
 
 <script>
+import figure from "@/assets/data/dc-comics.js";
+import FigureMain from './FigureMain.vue';
+
 export default {
   name: 'MainComp',
-   data(){
+  components:{
+    FigureMain
+  },
+  data(){
     return{
-      infos:[
-        {
-          text:'Characters',
-          url:'/',
-          img: '../assets/img/buy-comics-digital-comics.png'
-        },
-        {
-          text:'Comics',
-          url:'/',
-          img:'../assets/img/buy-comics-digital-comics.png'
-        },
-      ]
+      figure
     }
+  },
+  mounted(){
+    console.log(figure);
   }
 }
 </script>
@@ -52,28 +39,13 @@ export default {
 
   .fumetti{
     background-color: #1c1c1c;
-  }
-
-  .informazioni{
-    background-color: #0282f9;
-    ul{
+    .container{
       display: flex;
-      justify-content: space-around;
-      align-items: center;
-      li{
-        display: flex;
-        align-items: center;
-        img{
-          width: 50px;
-        }
-      }
-      
+      flex-basis: calc(100% / 7);
+      flex-wrap: wrap;
     }
   }
 
-  .container{
-    height: 200px;
-  }
 
 
 

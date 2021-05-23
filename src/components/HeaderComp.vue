@@ -1,7 +1,7 @@
 <template>
   <header>
 
-    <div class="container">
+    <div class="container head_">
       <a href="/">
         <img src="../assets/img/dc-logo.png" alt="">
       </a>
@@ -16,11 +16,17 @@
         </ul>
       </nav>
     </div>
+
+    <jumbotron-header />
   </header>
 </template>
 
 <script>
+import JumbotronHeader from './JumbotronHeader.vue'
 export default {
+  components: { 
+    JumbotronHeader 
+  },
   name: 'HaederComp',
   data(){
     return{
@@ -79,7 +85,7 @@ export default {
 <style lang="scss" scoped>
 
 
-  .container{
+  .head_{
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -100,7 +106,7 @@ export default {
       a{
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 14px;
+        font-size: 11px;
         font-weight: bold;
         color: #4f5559;
         &:hover,
